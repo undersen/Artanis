@@ -16,17 +16,6 @@ public class frmTransporte extends javax.swing.JFrame {
     /**
      * Creates new form frmHerr
      */
-    
-    int id_combo_pro =  0;
-
-    public int getId_combo_pro() {
-        return id_combo_pro;
-    }
-
-    public void setId_combo_pro(int id_combo_pro) {
-        this.id_combo_pro = id_combo_pro;
-    }
-    
             
     public frmTransporte() {
         initComponents();
@@ -153,6 +142,11 @@ public class frmTransporte extends javax.swing.JFrame {
 
         btnGuardarHerr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16guardar.png"))); // NOI18N
         btnGuardarHerr.setText("Guardar");
+        btnGuardarHerr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarHerrActionPerformed(evt);
+            }
+        });
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16Salir.png"))); // NOI18N
         btnSalir.setText("Salir");
@@ -221,6 +215,10 @@ public class frmTransporte extends javax.swing.JFrame {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
 this.dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnGuardarHerrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarHerrActionPerformed
+
+    }//GEN-LAST:event_btnGuardarHerrActionPerformed
 
     /**
      * @param args the command line arguments
