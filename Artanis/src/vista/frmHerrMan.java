@@ -5,7 +5,8 @@
  */
 package vista;
 
-import ram.provedorees;
+import ram.Provedorees;
+import ram.*;
 
 /**
  *
@@ -18,6 +19,7 @@ public class frmHerrMan extends javax.swing.JFrame {
      */
     
     int id_combo_pro =  0;
+    Herramientas h = new Herramientas();
 
     public int getId_combo_pro() {
         return id_combo_pro;
@@ -179,6 +181,11 @@ public class frmHerrMan extends javax.swing.JFrame {
 
         btnGuardarHerr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16guardar.png"))); // NOI18N
         btnGuardarHerr.setText("Guardar");
+        btnGuardarHerr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarHerrActionPerformed(evt);
+            }
+        });
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16Salir.png"))); // NOI18N
         btnSalir.setText("Salir");
@@ -239,7 +246,7 @@ public class frmHerrMan extends javax.swing.JFrame {
 
     private void cmbProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbProvActionPerformed
        
-        provedorees p=(provedorees) cmbProv.getSelectedItem();
+        Provedorees p=(Provedorees) cmbProv.getSelectedItem();
         id_combo_pro = p.getID();
         lbmensaje.setText(Integer.toString(id_combo_pro));
         lbmensaje.setVisible(true);
@@ -250,6 +257,11 @@ public class frmHerrMan extends javax.swing.JFrame {
 frmProvMan frm = new frmProvMan();
 frm.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btnGuardarHerrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarHerrActionPerformed
+    
+        
+    }//GEN-LAST:event_btnGuardarHerrActionPerformed
 
     /**
      * @param args the command line arguments

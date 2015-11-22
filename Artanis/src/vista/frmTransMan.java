@@ -5,19 +5,23 @@
  */
 package vista;
 
-import ram.provedorees;
+import javax.swing.JOptionPane;
+import ram.Transporte;
+import modelo.TransporteSQL;
 
 /**
  *
  * @author del_a
  */
-public class frmTransporte extends javax.swing.JFrame {
-
+public class frmTransMan extends javax.swing.JFrame {
+TransporteSQL SQL = new TransporteSQL();
+private boolean state;
+        
     /**
      * Creates new form frmHerr
      */
             
-    public frmTransporte() {
+    public frmTransMan() {
         initComponents();
     }
 
@@ -217,7 +221,26 @@ this.dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnGuardarHerrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarHerrActionPerformed
+Transporte t = new Transporte();
+try
+{
+ t.setNombreTransporte(txtNombre.getText());
+t.setDescripcionTransporte(txtDescripcion.getText());
+t.setValorTransporte(Integer.parseInt(txtValor.getText()));  
+}catch(Exception e){
+    System.out.println("problema de ingreso de datos");
+}
 
+
+ state = SQL.ingreso(t);
+ 
+ if (state){
+      JOptionPane.showMessageDialog(null, "Transporte ingresado Satisfacctoriamente","Artanis",1);
+             limpiarVar();
+ }else
+ {
+     JOptionPane.showMessageDialog(null, "No se a podido ingresar el Transporte","Artanis",1);
+ }
     }//GEN-LAST:event_btnGuardarHerrActionPerformed
 
     /**
@@ -237,14 +260,18 @@ this.dispose();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmTransporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmTransMan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmTransporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmTransMan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmTransporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmTransMan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmTransporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmTransMan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -253,7 +280,7 @@ this.dispose();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmTransporte().setVisible(true);
+                new frmTransMan().setVisible(true);
             }
         });
     }
@@ -277,4 +304,11 @@ this.dispose();
     public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtValor;
     // End of variables declaration//GEN-END:variables
+
+    private void limpiarVar() {
+      this.txtDescripcion.setText("");
+      this.txtNombre.setText("");
+      this.txtValor.setText("");
+              
+    }
 }

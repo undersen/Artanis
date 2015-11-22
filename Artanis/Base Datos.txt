@@ -1,32 +1,11 @@
-CREATE TABLE personal (
-id_per bigint(10) auto_increment,
-rut_per integer(8),
-dv_per varchar(1),
-nombre_per varchar(32),
-apellidos_per  varchar(32),
-direccion_per varchar(32),
-fecha_nac_per date,
-id_prev bigint(10),
-id_afp bigint(10),
-telefono_per  varchar(13),
-celular_per  varchar(13),
-fecha_ingreso_per date,
-id_car bigint(10) ,
-valor_hh_per integer(7),
-sueldo_per integer(7),
-tipo_jornada_per varchar(20),
-foreign key (id_car) references cargo (id_car),
-foreign key (id_prev) references prevision (id_prev),
-foreign key (id_afp) references afp (id_afp),
-PRIMARY KEY (id_per)
-);
-
 CREATE TABLE prevision (
 id_prev bigint(10) auto_increment,
 nombre_pre varchar(32) ,
 porcentaje_pre integer(1) ,
 PRIMARY KEY  (id_prev) 
 );
+
+
 
 CREATE TABLE afp (
 id_afp bigint(10) auto_increment,
@@ -45,9 +24,13 @@ PRIMARY KEY  (id_car)
 );
 
 
-INSERT INTO cargo (nombre_car,descripcion_car,valor_hh_car,valor_sueldo_car) VALUES  ("Administrador","Jefe de proyecto",15000,500000);
-INSERT INTO afp (nombre_afp,porcentaje_afp) VALUES  ("Provida",7);
-INSERT INTO prevision (nombre_pre,porcentaje_pre) VALUES  ("Consalud",7);
+CREATE TABLE proveedor(
+id_prov bigint(10) auto_increment,
+nombre_prov varchar(32),
+ciudad_prov  varchar(32),
+ubicacion_prov varchar(32),
+PRIMARY KEY  (id_prov)
+);
 
 
 CREATE TABLE herramientas(
@@ -62,18 +45,58 @@ foreign key (id_prov) references proveedor (id_prov),
 PRIMARY KEY  (id_herr)
 );
 
-CREATE TABLE proveedor(
-id_prov bigint(10) auto_increment,
-nombre_prov varchar(32),
-ciudad_prov  varchar(32),
-ubicacion_prov varchar(32),
-PRIMARY KEY  (id_prov)
+
+
+CREATE TABLE transporte(
+id_trans bigint(10) auto_increment,
+nombre_trans varchar(100),
+descripcion_trans varchar(32),
+valor_trans int(32),
+PRIMARY KEY  (id_trans)
 );
 
+
+
+CREATE TABLE jornadaLaboral (
+id_jorLab bigint(10) auto_increment,
+nombre_jorLab varchar(32) ,
+PRIMARY KEY  (id_jorLab) 
+);
+
+
+INSERT INTO cargo (nombre_car,descripcion_car,valor_hh_car,valor_sueldo_car) VALUES  ("Administrador","Jefe de proyecto",15000,500000);
+INSERT INTO afp (nombre_afp,porcentaje_afp) VALUES  ("Provida",7);
+INSERT INTO prevision (nombre_pre,porcentaje_pre) VALUES  ("Consalud",7);
 INSERT INTO proveedor (nombre_prov,ciudad_prov,ubicacion_prov) VALUES  ("CASANOVA","SANTIAGO","Av. Matta");
 
 
-SELECT c.id_cli , c.nombre, c.apellido,c.direccion,c.telefono, c.celular,c.fecha_ingreso,COUNT(r.id_cli) as can_rec FROM clientes as c  LEFT JOIN recetas as r ON c.id_cli=r.id_cli GROUP BY c.id_cli , c.nombre, c.apellido,c.direccion,c.telefono, c.celular,c.fecha_ingreso");
+
+CREATE TABLE personal (
+id_per bigint(10) auto_increment,
+rut_per integer(8),
+dv_per varchar(1),
+pri_nombre_per varchar(32),
+seg_nombre_per varchar(32),
+apellidoPat_per  varchar(32),
+apellidoMat_per  varchar(32),
+direccion_per varchar(32),
+fecha_nac_per date,
+id_prev bigint(10),
+id_afp bigint(10),
+id_jorLab bigint(10),
+telefono_per  varchar(13),
+celular_per  varchar(13),
+fecha_ingreso_per date,
+id_car bigint(10) ,
+valor_hh_per integer(7),
+sueldo_per integer(7),
+tipo_jornada_per varchar(20),
+foreign key (id_car) references cargo (id_car),
+foreign key (id_prev) references prevision (id_prev),
+foreign key (id_afp) references afp (id_afp),
+foreign key (id_jorLab) references jornadaLaboral (id_jorLab),
+PRIMARY KEY (id_per)
+);
 
 
 

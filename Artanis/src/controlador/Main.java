@@ -13,7 +13,8 @@ public class Main {
  
     public static void main(String[] args) {
       
-         new Controlador( new frmPrincipal() ).iniciar();
+      frmPrincipal p = new frmPrincipal();
+      p.setVisible(true);
         
     }
     

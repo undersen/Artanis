@@ -17,13 +17,13 @@ public class ConexionSQL {
     /* DATOS PARA LA CONEXION */
     private String db = "artanis";
     private String user = "root";
-    private String pass = "123456";
-    private String url = "jdbc:mysql://localhost/" + db;
+    private String pass = "root";
+    private String url = "jdbc:mysql://localhost:3307/" + db;
     private Connection conn = null;
 
     public ConexionSQL() {
 
-        this.url = "jdbc:mysql://localhost/" + this.db;
+        this.url = "jdbc:mysql://localhost:3307/" + this.db;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(this.url, this.user, this.pass);

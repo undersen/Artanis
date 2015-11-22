@@ -3,8 +3,8 @@ package modelo;
 import java.sql.*;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
-import ram.herramientas;
-import ram.provedorees;
+import ram.Herramientas;
+import ram.Provedorees;
 
 /**
  *
@@ -12,7 +12,7 @@ import ram.provedorees;
  */
 public class MuestraSQL extends ConexionSQL {
 
-    private herramientas h = new herramientas();
+    private Herramientas h = new Herramientas();
     private DefaultTableModel tablemodel = new DefaultTableModel();
 
     private int registrosHerr = 0;
@@ -76,7 +76,7 @@ public class MuestraSQL extends ConexionSQL {
             ResultSet res = pstm.executeQuery();
             while (res.next()) {
                 
-                model.addElement(new provedorees(res.getString("nombre_prov"),res.getInt("id_prov")));
+                model.addElement(new Provedorees(res.getString("nombre_prov"),res.getInt("id_prov")));
               
             }
             res.close();
@@ -86,7 +86,7 @@ public class MuestraSQL extends ConexionSQL {
         return model;
     }
 
-    public herramientas getHerramientas(int id) {
+    public Herramientas getHerramientas(int id) {
 
         String q = "SELECT * FROM herramientas,proveedor WHERE id_herr = " + id + "";
         try {

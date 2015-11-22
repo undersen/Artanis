@@ -5,7 +5,7 @@
  */
 package vista;
 
-import ram.provedorees;
+import ram.Provedorees;
 
 /**
  *

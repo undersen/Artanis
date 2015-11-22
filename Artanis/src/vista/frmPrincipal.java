@@ -14,6 +14,14 @@ public class frmPrincipal extends javax.swing.JFrame {
    // private TablaRenderizadorCliente renderizador = new TablaRenderizadorCliente();
     private int filaSeleccionada = -1;
    
+    frmPersonal p = new frmPersonal();
+    frmTransMan transMan = new frmTransMan();
+    
+    
+    
+    
+    
+    
     //*** Importar Variables ***
       
 
@@ -1825,6 +1833,11 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16perso.png"))); // NOI18N
         jMenuItem2.setText("Personal");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem2);
 
         jmHerramientas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16herr.png"))); // NOI18N
@@ -1870,16 +1883,14 @@ public class frmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-frmTransporte transportePanel = new frmTransporte();
-transportePanel.setVisible(true);
 
-
-
-
-
-
-
+transMan.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        
+        p.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments

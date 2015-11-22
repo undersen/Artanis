@@ -19,8 +19,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 import modelo.IngresoSQL;
 import modelo.MuestraSQL;
 import modelo.RescataFechaSistema;
-import ram.herramientas;
-import ram.provedorees;
+import ram.Herramientas;
+import ram.Provedorees;
 import vista.frmHerrMan;
 import vista.frmHerramientas;
 import vista.frmPrincipal;
@@ -34,7 +34,7 @@ public class Controlador implements ActionListener, MouseListener {
     private RescataFechaSistema fechaSistema = new RescataFechaSistema();
     private MuestraSQL modelo = new MuestraSQL();
     private IngresoSQL INT = new IngresoSQL();
-    private herramientas h = new herramientas();
+    private Herramientas h = new Herramientas();
 
     //*** Variable globales ***
     private static int MENSAJE = 0;
@@ -205,7 +205,7 @@ public class Controlador implements ActionListener, MouseListener {
     }
 
     public void LLenaFrmHerr() {
-        herramientas tmp = this.modelo.getHerramientas(Integer.parseInt(IDtablaherr));
+        Herramientas tmp = this.modelo.getHerramientas(Integer.parseInt(IDtablaherr));
         this.frmherrman.txtNombre.setText(String.valueOf(tmp.getNombre_herr()));
         this.frmherrman.txtDescripcion.setText(String.valueOf(tmp.getDescripcion_herr()));
         this.frmherrman.txtValor.setText(String.valueOf(tmp.getValor_herr()));
@@ -221,7 +221,6 @@ public class Controlador implements ActionListener, MouseListener {
 
         this.frmherramientas.tablaHerr.setModel(this.modelo.getTablaHerr());
         this.frmherramientas.lbCantidadHerr.setText(Integer.toString(this.modelo.getRegistrosHerr()));
-
         this.frmherrman.txtNombre.setText("");
         this.frmherrman.txtDescripcion.setText("");
         this.frmherrman.txtValor.setText("");
