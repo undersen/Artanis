@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import javax.swing.JFrame;
 import vista.frmPrincipal;
 
 
@@ -14,6 +15,7 @@ public class Main {
     public static void main(String[] args) {
       
       frmPrincipal p = new frmPrincipal();
+      p.setExtendedState(JFrame.MAXIMIZED_BOTH);
       p.setVisible(true);
         
     }

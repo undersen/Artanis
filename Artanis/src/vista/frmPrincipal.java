@@ -14,7 +14,7 @@ public class frmPrincipal extends javax.swing.JFrame {
    // private TablaRenderizadorCliente renderizador = new TablaRenderizadorCliente();
     private int filaSeleccionada = -1;
    
-    frmPersonal p = new frmPersonal();
+    frmPersonal personalMan = new frmPersonal();
     frmTransMan transMan = new frmTransMan();
     
     
@@ -44,29 +44,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        Cotizaciones = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tabla = new javax.swing.JTable();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel10 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jPanel41 = new javax.swing.JPanel();
         jPanel49 = new javax.swing.JPanel();
@@ -286,6 +263,29 @@ public class frmPrincipal extends javax.swing.JFrame {
         jLabel325 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        Cotizaciones = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
+        jComboBox1 = new javax.swing.JComboBox();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
@@ -312,260 +312,6 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jTabbedPane1.setForeground(new java.awt.Color(0, 153, 153));
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel3.setText("Buscar Cotizaciones :");
-
-        Cotizaciones.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Cotizaciones.setForeground(new java.awt.Color(0, 153, 153));
-        Cotizaciones.setText("Cotizaciones");
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel5.setText("N°");
-
-        tabla.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        tabla.setForeground(new java.awt.Color(0, 102, 255));
-        tabla.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(tabla);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Enviada", "Pendiente", "Aprovada", "Rechazada" }));
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel10.setText("Estado :");
-
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cotizaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
-        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel6.setText("Enviadas :");
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel8.setText("Aprobadas :");
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel11.setText("Rechazadas :");
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel12.setText("N°");
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel9.setText("N°");
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel7.setText("N°");
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel16.setText("Pendientes :");
-
-        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel17.setText("N°");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(67, 67, 67)
-                        .addComponent(jLabel8))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel11)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel9))
-                .addGap(0, 48, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel17))
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
-
-        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
-        jPanel7.setForeground(new java.awt.Color(255, 255, 255));
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16ingre.png"))); // NOI18N
-        jButton2.setText("Ingresar");
-
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16edi.png"))); // NOI18N
-        jButton4.setText("Modificar");
-
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16elim.png"))); // NOI18N
-        jButton7.setText("Papelera");
-
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16pdf.png"))); // NOI18N
-        jButton8.setText("PDF");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1356, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Cotizaciones)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Cotizaciones)
-                        .addComponent(jLabel5)))
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Cotizaciones", jPanel2);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -611,15 +357,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jComboBox41.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comercio Net Chile", " " }));
         jPanel50.add(jComboBox41);
-        jComboBox41.setBounds(80, 30, 210, 20);
+        jComboBox41.setBounds(80, 30, 210, 27);
         jPanel50.add(jTextField85);
-        jTextField85.setBounds(80, 60, 210, 20);
+        jTextField85.setBounds(80, 60, 210, 28);
         jPanel50.add(jTextField86);
-        jTextField86.setBounds(80, 90, 210, 20);
+        jTextField86.setBounds(80, 90, 210, 28);
         jPanel50.add(jButton107);
-        jButton107.setBounds(300, 90, 40, 9);
+        jButton107.setBounds(300, 90, 40, 29);
         jPanel50.add(jButton125);
-        jButton125.setBounds(300, 60, 40, 9);
+        jButton125.setBounds(300, 60, 40, 29);
 
         jLabel209.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel209.setForeground(new java.awt.Color(102, 102, 102));
@@ -629,7 +375,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jButton126.setText("Conectar");
         jPanel50.add(jButton126);
-        jButton126.setBounds(240, 130, 100, 23);
+        jButton126.setBounds(240, 130, 100, 29);
 
         jPanel51.setBackground(new java.awt.Color(255, 255, 255));
         jPanel51.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ingreso VPN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(153, 153, 153))); // NOI18N
@@ -661,15 +407,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jComboBox42.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comercio Net Chile", " " }));
         jPanel51.add(jComboBox42);
-        jComboBox42.setBounds(80, 30, 210, 20);
+        jComboBox42.setBounds(80, 30, 210, 27);
         jPanel51.add(jTextField87);
-        jTextField87.setBounds(80, 60, 210, 20);
+        jTextField87.setBounds(80, 60, 210, 28);
         jPanel51.add(jTextField88);
-        jTextField88.setBounds(80, 90, 210, 20);
+        jTextField88.setBounds(80, 90, 210, 28);
         jPanel51.add(jButton127);
-        jButton127.setBounds(300, 90, 40, 9);
+        jButton127.setBounds(300, 90, 40, 29);
         jPanel51.add(jButton128);
-        jButton128.setBounds(300, 60, 40, 9);
+        jButton128.setBounds(300, 60, 40, 29);
 
         jLabel214.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel214.setForeground(new java.awt.Color(102, 102, 102));
@@ -679,7 +425,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jButton129.setText("Conectar");
         jPanel51.add(jButton129);
-        jButton129.setBounds(240, 130, 100, 23);
+        jButton129.setBounds(240, 130, 100, 29);
 
         jPanel52.setBackground(new java.awt.Color(255, 255, 255));
         jPanel52.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ingreso VPN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(153, 153, 153))); // NOI18N
@@ -711,15 +457,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jComboBox43.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comercio Net Chile", " " }));
         jPanel52.add(jComboBox43);
-        jComboBox43.setBounds(80, 30, 210, 20);
+        jComboBox43.setBounds(80, 30, 210, 27);
         jPanel52.add(jTextField89);
-        jTextField89.setBounds(80, 60, 210, 20);
+        jTextField89.setBounds(80, 60, 210, 28);
         jPanel52.add(jTextField90);
-        jTextField90.setBounds(80, 90, 210, 20);
+        jTextField90.setBounds(80, 90, 210, 28);
         jPanel52.add(jButton130);
-        jButton130.setBounds(300, 90, 40, 9);
+        jButton130.setBounds(300, 90, 40, 29);
         jPanel52.add(jButton131);
-        jButton131.setBounds(300, 60, 40, 9);
+        jButton131.setBounds(300, 60, 40, 29);
 
         jLabel219.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel219.setForeground(new java.awt.Color(102, 102, 102));
@@ -729,7 +475,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jButton132.setText("Conectar");
         jPanel52.add(jButton132);
-        jButton132.setBounds(240, 130, 100, 23);
+        jButton132.setBounds(240, 130, 100, 29);
 
         jPanel51.add(jPanel52);
         jPanel52.setBounds(0, 0, 0, 0);
@@ -764,15 +510,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jComboBox44.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comercio Net Chile", " " }));
         jPanel53.add(jComboBox44);
-        jComboBox44.setBounds(80, 30, 210, 20);
+        jComboBox44.setBounds(80, 30, 210, 27);
         jPanel53.add(jTextField91);
-        jTextField91.setBounds(80, 60, 210, 20);
+        jTextField91.setBounds(80, 60, 210, 28);
         jPanel53.add(jTextField92);
-        jTextField92.setBounds(80, 90, 210, 20);
+        jTextField92.setBounds(80, 90, 210, 28);
         jPanel53.add(jButton133);
-        jButton133.setBounds(300, 90, 40, 9);
+        jButton133.setBounds(300, 90, 40, 29);
         jPanel53.add(jButton134);
-        jButton134.setBounds(300, 60, 40, 9);
+        jButton134.setBounds(300, 60, 40, 29);
 
         jLabel224.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel224.setForeground(new java.awt.Color(102, 102, 102));
@@ -782,7 +528,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jButton135.setText("Conectar");
         jPanel53.add(jButton135);
-        jButton135.setBounds(240, 130, 100, 23);
+        jButton135.setBounds(240, 130, 100, 29);
 
         jPanel54.setBackground(new java.awt.Color(255, 255, 255));
         jPanel54.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ingreso VPN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(153, 153, 153))); // NOI18N
@@ -814,15 +560,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jComboBox45.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comercio Net Chile", " " }));
         jPanel54.add(jComboBox45);
-        jComboBox45.setBounds(80, 30, 210, 20);
+        jComboBox45.setBounds(80, 30, 210, 27);
         jPanel54.add(jTextField93);
-        jTextField93.setBounds(80, 60, 210, 20);
+        jTextField93.setBounds(80, 60, 210, 28);
         jPanel54.add(jTextField94);
-        jTextField94.setBounds(80, 90, 210, 20);
+        jTextField94.setBounds(80, 90, 210, 28);
         jPanel54.add(jButton136);
-        jButton136.setBounds(300, 90, 40, 9);
+        jButton136.setBounds(300, 90, 40, 29);
         jPanel54.add(jButton137);
-        jButton137.setBounds(300, 60, 40, 9);
+        jButton137.setBounds(300, 60, 40, 29);
 
         jLabel229.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel229.setForeground(new java.awt.Color(102, 102, 102));
@@ -832,7 +578,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jButton138.setText("Conectar");
         jPanel54.add(jButton138);
-        jButton138.setBounds(240, 130, 100, 23);
+        jButton138.setBounds(240, 130, 100, 29);
 
         jPanel53.add(jPanel54);
         jPanel54.setBounds(0, 0, 0, 0);
@@ -867,15 +613,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jComboBox46.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comercio Net Chile", " " }));
         jPanel55.add(jComboBox46);
-        jComboBox46.setBounds(80, 30, 210, 20);
+        jComboBox46.setBounds(80, 30, 210, 27);
         jPanel55.add(jTextField95);
-        jTextField95.setBounds(80, 60, 210, 20);
+        jTextField95.setBounds(80, 60, 210, 28);
         jPanel55.add(jTextField96);
-        jTextField96.setBounds(80, 90, 210, 20);
+        jTextField96.setBounds(80, 90, 210, 28);
         jPanel55.add(jButton139);
-        jButton139.setBounds(300, 90, 40, 9);
+        jButton139.setBounds(300, 90, 40, 29);
         jPanel55.add(jButton140);
-        jButton140.setBounds(300, 60, 40, 9);
+        jButton140.setBounds(300, 60, 40, 29);
 
         jLabel234.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel234.setForeground(new java.awt.Color(102, 102, 102));
@@ -885,7 +631,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jButton141.setText("Conectar");
         jPanel55.add(jButton141);
-        jButton141.setBounds(240, 130, 100, 23);
+        jButton141.setBounds(240, 130, 100, 29);
 
         jPanel56.setBackground(new java.awt.Color(255, 255, 255));
         jPanel56.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ingreso VPN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(153, 153, 153))); // NOI18N
@@ -917,15 +663,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jComboBox47.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comercio Net Chile", " " }));
         jPanel56.add(jComboBox47);
-        jComboBox47.setBounds(80, 30, 210, 20);
+        jComboBox47.setBounds(80, 30, 210, 27);
         jPanel56.add(jTextField97);
-        jTextField97.setBounds(80, 60, 210, 20);
+        jTextField97.setBounds(80, 60, 210, 28);
         jPanel56.add(jTextField98);
-        jTextField98.setBounds(80, 90, 210, 20);
+        jTextField98.setBounds(80, 90, 210, 28);
         jPanel56.add(jButton142);
-        jButton142.setBounds(300, 90, 40, 9);
+        jButton142.setBounds(300, 90, 40, 29);
         jPanel56.add(jButton143);
-        jButton143.setBounds(300, 60, 40, 9);
+        jButton143.setBounds(300, 60, 40, 29);
 
         jLabel239.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel239.setForeground(new java.awt.Color(102, 102, 102));
@@ -935,7 +681,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jButton144.setText("Conectar");
         jPanel56.add(jButton144);
-        jButton144.setBounds(240, 130, 100, 23);
+        jButton144.setBounds(240, 130, 100, 29);
 
         jPanel55.add(jPanel56);
         jPanel56.setBounds(0, 0, 0, 0);
@@ -1025,7 +771,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                         .addGroup(jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jbtnGenerarSQL4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jbtnGenerarSQL5, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE))))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel49Layout.setVerticalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1104,15 +850,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jComboBox48.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comercio Net Chile", " " }));
         jPanel58.add(jComboBox48);
-        jComboBox48.setBounds(80, 30, 210, 20);
+        jComboBox48.setBounds(80, 30, 210, 27);
         jPanel58.add(jTextField105);
-        jTextField105.setBounds(80, 60, 210, 20);
+        jTextField105.setBounds(80, 60, 210, 28);
         jPanel58.add(jTextField106);
-        jTextField106.setBounds(80, 90, 210, 20);
+        jTextField106.setBounds(80, 90, 210, 28);
         jPanel58.add(jButton145);
-        jButton145.setBounds(300, 90, 40, 9);
+        jButton145.setBounds(300, 90, 40, 29);
         jPanel58.add(jButton146);
-        jButton146.setBounds(300, 60, 40, 9);
+        jButton146.setBounds(300, 60, 40, 29);
 
         jLabel250.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel250.setForeground(new java.awt.Color(102, 102, 102));
@@ -1122,7 +868,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jButton147.setText("Conectar");
         jPanel58.add(jButton147);
-        jButton147.setBounds(240, 130, 100, 23);
+        jButton147.setBounds(240, 130, 100, 29);
 
         jPanel59.setBackground(new java.awt.Color(255, 255, 255));
         jPanel59.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ingreso VPN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(153, 153, 153))); // NOI18N
@@ -1154,15 +900,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jComboBox49.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comercio Net Chile", " " }));
         jPanel59.add(jComboBox49);
-        jComboBox49.setBounds(80, 30, 210, 20);
+        jComboBox49.setBounds(80, 30, 210, 27);
         jPanel59.add(jTextField107);
-        jTextField107.setBounds(80, 60, 210, 20);
+        jTextField107.setBounds(80, 60, 210, 28);
         jPanel59.add(jTextField108);
-        jTextField108.setBounds(80, 90, 210, 20);
+        jTextField108.setBounds(80, 90, 210, 28);
         jPanel59.add(jButton148);
-        jButton148.setBounds(300, 90, 40, 9);
+        jButton148.setBounds(300, 90, 40, 29);
         jPanel59.add(jButton149);
-        jButton149.setBounds(300, 60, 40, 9);
+        jButton149.setBounds(300, 60, 40, 29);
 
         jLabel255.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel255.setForeground(new java.awt.Color(102, 102, 102));
@@ -1172,7 +918,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jButton150.setText("Conectar");
         jPanel59.add(jButton150);
-        jButton150.setBounds(240, 130, 100, 23);
+        jButton150.setBounds(240, 130, 100, 29);
 
         jPanel60.setBackground(new java.awt.Color(255, 255, 255));
         jPanel60.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ingreso VPN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(153, 153, 153))); // NOI18N
@@ -1204,15 +950,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jComboBox50.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comercio Net Chile", " " }));
         jPanel60.add(jComboBox50);
-        jComboBox50.setBounds(80, 30, 210, 20);
+        jComboBox50.setBounds(80, 30, 210, 27);
         jPanel60.add(jTextField109);
-        jTextField109.setBounds(80, 60, 210, 20);
+        jTextField109.setBounds(80, 60, 210, 28);
         jPanel60.add(jTextField110);
-        jTextField110.setBounds(80, 90, 210, 20);
+        jTextField110.setBounds(80, 90, 210, 28);
         jPanel60.add(jButton151);
-        jButton151.setBounds(300, 90, 40, 9);
+        jButton151.setBounds(300, 90, 40, 29);
         jPanel60.add(jButton152);
-        jButton152.setBounds(300, 60, 40, 9);
+        jButton152.setBounds(300, 60, 40, 29);
 
         jLabel260.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel260.setForeground(new java.awt.Color(102, 102, 102));
@@ -1222,7 +968,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jButton153.setText("Conectar");
         jPanel60.add(jButton153);
-        jButton153.setBounds(240, 130, 100, 23);
+        jButton153.setBounds(240, 130, 100, 29);
 
         jPanel59.add(jPanel60);
         jPanel60.setBounds(0, 0, 0, 0);
@@ -1257,15 +1003,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jComboBox51.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comercio Net Chile", " " }));
         jPanel61.add(jComboBox51);
-        jComboBox51.setBounds(80, 30, 210, 20);
+        jComboBox51.setBounds(80, 30, 210, 27);
         jPanel61.add(jTextField111);
-        jTextField111.setBounds(80, 60, 210, 20);
+        jTextField111.setBounds(80, 60, 210, 28);
         jPanel61.add(jTextField112);
-        jTextField112.setBounds(80, 90, 210, 20);
+        jTextField112.setBounds(80, 90, 210, 28);
         jPanel61.add(jButton154);
-        jButton154.setBounds(300, 90, 40, 9);
+        jButton154.setBounds(300, 90, 40, 29);
         jPanel61.add(jButton155);
-        jButton155.setBounds(300, 60, 40, 9);
+        jButton155.setBounds(300, 60, 40, 29);
 
         jLabel265.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel265.setForeground(new java.awt.Color(102, 102, 102));
@@ -1275,7 +1021,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jButton156.setText("Conectar");
         jPanel61.add(jButton156);
-        jButton156.setBounds(240, 130, 100, 23);
+        jButton156.setBounds(240, 130, 100, 29);
 
         jPanel62.setBackground(new java.awt.Color(255, 255, 255));
         jPanel62.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ingreso VPN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(153, 153, 153))); // NOI18N
@@ -1307,15 +1053,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jComboBox52.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comercio Net Chile", " " }));
         jPanel62.add(jComboBox52);
-        jComboBox52.setBounds(80, 30, 210, 20);
+        jComboBox52.setBounds(80, 30, 210, 27);
         jPanel62.add(jTextField113);
-        jTextField113.setBounds(80, 60, 210, 20);
+        jTextField113.setBounds(80, 60, 210, 28);
         jPanel62.add(jTextField114);
-        jTextField114.setBounds(80, 90, 210, 20);
+        jTextField114.setBounds(80, 90, 210, 28);
         jPanel62.add(jButton157);
-        jButton157.setBounds(300, 90, 40, 9);
+        jButton157.setBounds(300, 90, 40, 29);
         jPanel62.add(jButton158);
-        jButton158.setBounds(300, 60, 40, 9);
+        jButton158.setBounds(300, 60, 40, 29);
 
         jLabel270.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel270.setForeground(new java.awt.Color(102, 102, 102));
@@ -1325,7 +1071,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jButton159.setText("Conectar");
         jPanel62.add(jButton159);
-        jButton159.setBounds(240, 130, 100, 23);
+        jButton159.setBounds(240, 130, 100, 29);
 
         jPanel61.add(jPanel62);
         jPanel62.setBounds(0, 0, 0, 0);
@@ -1360,15 +1106,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jComboBox53.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comercio Net Chile", " " }));
         jPanel63.add(jComboBox53);
-        jComboBox53.setBounds(80, 30, 210, 20);
+        jComboBox53.setBounds(80, 30, 210, 27);
         jPanel63.add(jTextField115);
-        jTextField115.setBounds(80, 60, 210, 20);
+        jTextField115.setBounds(80, 60, 210, 28);
         jPanel63.add(jTextField116);
-        jTextField116.setBounds(80, 90, 210, 20);
+        jTextField116.setBounds(80, 90, 210, 28);
         jPanel63.add(jButton160);
-        jButton160.setBounds(300, 90, 40, 9);
+        jButton160.setBounds(300, 90, 40, 29);
         jPanel63.add(jButton161);
-        jButton161.setBounds(300, 60, 40, 9);
+        jButton161.setBounds(300, 60, 40, 29);
 
         jLabel275.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel275.setForeground(new java.awt.Color(102, 102, 102));
@@ -1378,7 +1124,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jButton162.setText("Conectar");
         jPanel63.add(jButton162);
-        jButton162.setBounds(240, 130, 100, 23);
+        jButton162.setBounds(240, 130, 100, 29);
 
         jPanel64.setBackground(new java.awt.Color(255, 255, 255));
         jPanel64.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ingreso VPN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(153, 153, 153))); // NOI18N
@@ -1410,15 +1156,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jComboBox54.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Comercio Net Chile", " " }));
         jPanel64.add(jComboBox54);
-        jComboBox54.setBounds(80, 30, 210, 20);
+        jComboBox54.setBounds(80, 30, 210, 27);
         jPanel64.add(jTextField117);
-        jTextField117.setBounds(80, 60, 210, 20);
+        jTextField117.setBounds(80, 60, 210, 28);
         jPanel64.add(jTextField118);
-        jTextField118.setBounds(80, 90, 210, 20);
+        jTextField118.setBounds(80, 90, 210, 28);
         jPanel64.add(jButton163);
-        jButton163.setBounds(300, 90, 40, 9);
+        jButton163.setBounds(300, 90, 40, 29);
         jPanel64.add(jButton164);
-        jButton164.setBounds(300, 60, 40, 9);
+        jButton164.setBounds(300, 60, 40, 29);
 
         jLabel280.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel280.setForeground(new java.awt.Color(102, 102, 102));
@@ -1428,7 +1174,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jButton165.setText("Conectar");
         jPanel64.add(jButton165);
-        jButton165.setBounds(240, 130, 100, 23);
+        jButton165.setBounds(240, 130, 100, 29);
 
         jPanel63.add(jPanel64);
         jPanel64.setBounds(0, 0, 0, 0);
@@ -1443,7 +1189,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jbtnGenerarSQL2.setText("Procesar");
 
         jPanel67.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel67.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 153, 153))); // NOI18N
+        jPanel67.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(0, 153, 153))); // NOI18N
 
         jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setText("Gatilla notificacion.");
@@ -1596,7 +1342,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jPanel74.setLayout(jPanel74Layout);
         jPanel74Layout.setHorizontalGroup(
             jPanel74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
         );
         jPanel74Layout.setVerticalGroup(
             jPanel74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1614,7 +1360,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jPanel75.setLayout(jPanel75Layout);
         jPanel75Layout.setHorizontalGroup(
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
         );
         jPanel75Layout.setVerticalGroup(
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1684,7 +1430,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         );
         jPanel41Layout.setVerticalGroup(
             jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel49, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)
+            .addComponent(jPanel49, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)
             .addComponent(jPanel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel48, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -1707,6 +1453,260 @@ public class frmPrincipal extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Ordenes de trabajo", jPanel5);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel3.setText("Buscar Cotizaciones :");
+
+        Cotizaciones.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Cotizaciones.setForeground(new java.awt.Color(0, 153, 153));
+        Cotizaciones.setText("Cotizaciones");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel5.setText("N°");
+
+        tabla.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        tabla.setForeground(new java.awt.Color(0, 102, 255));
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(tabla);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Enviada", "Pendiente", "Aprovada", "Rechazada" }));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel10.setText("Estado :");
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cotizaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel6.setText("Enviadas :");
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel8.setText("Aprobadas :");
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel11.setText("Rechazadas :");
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel12.setText("N°");
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel9.setText("N°");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel7.setText("N°");
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel16.setText("Pendientes :");
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel17.setText("N°");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(67, 67, 67)
+                        .addComponent(jLabel8))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel11)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel9))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel17))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel7.setForeground(new java.awt.Color(255, 255, 255));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16ingre.png"))); // NOI18N
+        jButton2.setText("Ingresar");
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16edi.png"))); // NOI18N
+        jButton4.setText("Modificar");
+
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16elim.png"))); // NOI18N
+        jButton7.setText("Papelera");
+
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16pdf.png"))); // NOI18N
+        jButton8.setText("PDF");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Cotizaciones)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Cotizaciones)
+                        .addComponent(jLabel5)))
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Cotizaciones", jPanel2);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
@@ -1766,6 +1766,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16reloj.png"))); // NOI18N
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/32power.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -1874,8 +1879,8 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1)
-                .addGap(18, 18, 18)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -1883,14 +1888,18 @@ public class frmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-
+transMan.setLocationRelativeTo(null);        
 transMan.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        
-        p.setVisible(true);
+        personalMan.setLocationRelativeTo(null);        
+        personalMan.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

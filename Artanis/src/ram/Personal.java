@@ -14,31 +14,6 @@ import java.sql.Date;
  */
 public class Personal {
     
-    /*
-    id_per bigint(10) auto_increment,
-rut_per integer(8),
-dv_per varchar(1),
-nombre_per varchar(32),
-apellidos_per  varchar(32),
-direccion_per varchar(32),
-fecha_nac_per date,
-id_prev bigint(10),
-id_afp bigint(10),
-telefono_per  varchar(13),
-celular_per  varchar(13),
-fecha_ingreso_per date,
-id_car bigint(10) ,
-valor_hh_per integer(7),
-sueldo_per integer(7),
-tipo_jornada_per varchar(20),
-foreign key (id_car) references cargo (id_car),
-foreign key (id_prev) references prevision (id_prev),
-foreign key (id_afp) references afp (id_afp),
-PRIMARY KEY (id_per)
-);
-    */
-    
-    
     private int id_per;
     private int rut_per;    
     private char dv_per;    
@@ -54,31 +29,10 @@ PRIMARY KEY (id_per)
     private Date fecha_ingreso_per ;
     private int id_car ;
     private int valor_hh_per ;
+    private String tipo_jornada_per;
+        private String direccion_per;
 private  int sueldo_per ;
-
-    public Personal(int id_per, int rut_per, char dv_per, String Pri_nombre_per, String Seg_nombre_per, String apellidoM_per, String apellidoP_per, Date fecha_nac_per, int id_prev, int id_afp, String telefono_per, String celular_per, Date fecha_ingreso_per, int id_car, int valor_hh_per, int sueldo_per, int tipo_jornada_per) {
-        this.id_per = id_per;
-        this.rut_per = rut_per;
-        this.dv_per = dv_per;
-        this.Pri_nombre_per = Pri_nombre_per;
-        this.Seg_nombre_per = Seg_nombre_per;
-        this.apellidoM_per = apellidoM_per;
-        this.apellidoP_per = apellidoP_per;
-        this.fecha_nac_per = fecha_nac_per;
-        this.id_prev = id_prev;
-        this.id_afp = id_afp;
-        this.telefono_per = telefono_per;
-        this.celular_per = celular_per;
-        this.fecha_ingreso_per = fecha_ingreso_per;
-        this.id_car = id_car;
-        this.valor_hh_per = valor_hh_per;
-        this.sueldo_per = sueldo_per;
-        this.tipo_jornada_per = tipo_jornada_per;
-    }
-
-    public Personal() {
-    }
-private int tipo_jornada_per ;
+        private String estado_civil_per;
 
     public int getId_per() {
         return id_per;
@@ -200,6 +154,22 @@ private int tipo_jornada_per ;
         this.valor_hh_per = valor_hh_per;
     }
 
+    public String getTipo_jornada_per() {
+        return tipo_jornada_per;
+    }
+
+    public void setTipo_jornada_per(String tipo_jornada_per) {
+        this.tipo_jornada_per = tipo_jornada_per;
+    }
+
+    public String getDireccion_per() {
+        return direccion_per;
+    }
+
+    public void setDireccion_per(String direccion_per) {
+        this.direccion_per = direccion_per;
+    }
+
     public int getSueldo_per() {
         return sueldo_per;
     }
@@ -208,30 +178,12 @@ private int tipo_jornada_per ;
         this.sueldo_per = sueldo_per;
     }
 
-    public int getTipo_jornada_per() {
-        return tipo_jornada_per;
+    public String getEstado_civil_per() {
+        return estado_civil_per;
     }
 
-    public void setTipo_jornada_per(int tipo_jornada_per) {
-        this.tipo_jornada_per = tipo_jornada_per;
+    public void setEstado_civil_per(String estado_civil_per) {
+        this.estado_civil_per = estado_civil_per;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }
