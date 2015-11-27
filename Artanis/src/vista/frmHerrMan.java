@@ -50,7 +50,11 @@ public class frmHerrMan extends javax.swing.JFrame {
         herr = herrSql.getHerrById(i);
         // seteo la variable y le digo que si es una modificacion
         itsModf = true;
-        cargarValores();
+        try {
+            cargarValores();
+        } catch (SQLException ex) {
+            Logger.getLogger(frmHerrMan.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 
@@ -308,6 +312,7 @@ public class frmHerrMan extends javax.swing.JFrame {
                     Date date = new Date();
                     herr.setFecha_ing_herr(dateFormat.format(date));
                     herr.setFecha_mod_herr(dateFormat.format(date));
+                    
 
                     herrSql.insertHerramientas(herr);
                 }
@@ -323,9 +328,9 @@ public class frmHerrMan extends javax.swing.JFrame {
             herr.setEstado_herr(cmbEstado.getSelectedItem().toString());
             herr.setNombre_prov(this.cmbProv.getSelectedItem().toString());
             herr.setValor_herr(Integer.parseInt(this.txtValor.getText()));
+            herr.setEstado_herr(cmbEstado.getSelectedItem().toString());
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
             Date date = new Date();
-
             herr.setFecha_mod_herr(dateFormat.format(date));
             
             herrSql.updateHerramientas(herr);
@@ -436,8 +441,20 @@ public class frmHerrMan extends javax.swing.JFrame {
         }
     }
 
-    private void cargarValores() {
+    private void cargarValores() throws SQLException {
+        
+        cmbProv.removeAllItems();
         this.txtDescripcion.setText(herr.getDescripcion_herr());
+        this.txtMarca.setText(herr.getMarca_herr());
+        this.txtNombre.setText(herr.getNombre_herr());
+        this.txtValor.setText(""+herr.getValor_herr());
+        this.cmbEstado.setSelectedItem(herr.getEstado_herr());
+        cargarProveedor();
+        this.cmbProv.setSelectedItem(herr.getNombre_prov());
+        this.lbUltimaMod.setText(lbUltimaMod.getText()+" "+herr.getFecha_mod_herr());
+        
+        
+        
     }
     
  

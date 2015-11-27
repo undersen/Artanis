@@ -48,6 +48,7 @@ public class frmHerramientas extends javax.swing.JFrame {
         btnModificarHerr = new javax.swing.JButton();
         btnEliminarHerr = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -127,6 +128,13 @@ public class frmHerramientas extends javax.swing.JFrame {
             }
         });
 
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -150,6 +158,8 @@ public class frmHerramientas extends javax.swing.JFrame {
                         .addComponent(btnModificarHerr)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnEliminarHerr)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnActualizar)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -171,7 +181,8 @@ public class frmHerramientas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresarHerr)
                     .addComponent(btnModificarHerr)
-                    .addComponent(btnEliminarHerr))
+                    .addComponent(btnEliminarHerr)
+                    .addComponent(btnActualizar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(jButton4)
                 .addContainerGap())
@@ -208,6 +219,10 @@ String  a =  (String) (tablaHerr.getValueAt(row, 0));
     private void btnEliminarHerrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarHerrActionPerformed
 herrSql.deleteHerramientas(IDHerramienta);
     }//GEN-LAST:event_btnEliminarHerrActionPerformed
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+ tablaHerr.setModel(herrSql.getTablaHerr());
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,6 +264,7 @@ herrSql.deleteHerramientas(IDHerramienta);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnEliminarHerr;
     public javax.swing.JButton btnIngresarHerr;
     public javax.swing.JButton btnModificarHerr;
