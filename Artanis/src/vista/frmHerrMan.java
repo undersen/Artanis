@@ -8,9 +8,17 @@ package vista;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import modelo.HerramientasSQL;
+import javax.swing.JOptionPane;
+import Controladores.HerramientasSQL;
+import Controladores.ProveedorSQL;
+import java.lang.reflect.Constructor;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import ram.Herramientas;
-import ram.Provedorees;
+import ram.Proveedor;
+import vista.frmPrincipal;
 
 /**
  *
@@ -18,33 +26,33 @@ import ram.Provedorees;
  */
 public class frmHerrMan extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frmHerr
-     */
+    //Creo instancia del modelo de las herramientas para ser llenado
     Herramientas herr = new Herramientas();
+
+    //Creo instancia del controlador de las herramientas para ser insertado en la BD
     HerramientasSQL herrSql = new HerramientasSQL();
-    
-    
-    int id_combo_pro =  0;
+    ProveedorSQL provSQL = new ProveedorSQL();
 
-    public int getId_combo_pro() {
-        return id_combo_pro;
-    }
-
-    public void setId_combo_pro(int id_combo_pro) {
-        this.id_combo_pro = id_combo_pro;
-    }
     
-            
-    public frmHerrMan() {
+    //creo una variable para saber si fue instanciado como un ingreso o una modificacion
+    boolean itsModf = false;
+
+  
+
+    public frmHerrMan() throws SQLException {
         initComponents();
-    }
-    
-      public frmHerrMan(int i) {
-        initComponents();
-        loadWithInfo();
+        cargarProveedor();
     }
 
+    public frmHerrMan(int i) {
+        initComponents();
+        //loadWithInfo();
+        herr = herrSql.getHerrById(i);
+        // seteo la variable y le digo que si es una modificacion
+        itsModf = true;
+        cargarValores();
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -228,6 +236,11 @@ public class frmHerrMan extends javax.swing.JFrame {
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16Salir.png"))); // NOI18N
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16Calendario.png"))); // NOI18N
         jLabel8.setText("Fecha :");
@@ -271,37 +284,65 @@ public class frmHerrMan extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbProvActionPerformed
-       
-        Provedorees p=(Provedorees) cmbProv.getSelectedItem();
-        id_combo_pro = p.getID();
-        lbmensaje.setText(Integer.toString(id_combo_pro));
-        lbmensaje.setVisible(true);
-        lbmensaje.setText(" "+id_combo_pro);
-        
+
+
     }//GEN-LAST:event_cmbProvActionPerformed
 
     private void btnGuardarHerrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarHerrActionPerformed
-   try{
-        
-     herr.setNombre_herr(txtNombre.getText());
-     herr.setDescripcion_herr(txtDescripcion.getText());
-     herr.setMarca_herr(txtMarca.getText());
-     herr.setEstado_herr(cmbEstado.getSelectedItem().toString());
-     herr.setNombre_prov(this.cmbProv.getSelectedItem().toString());
-     herr.setValor_herr(Integer.parseInt(this.txtValor.getText()));
-    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-    Date date = new Date();
-    herr.setFecha_ing_herr(dateFormat.format(date));
-    herr.setFecha_mod_herr(dateFormat.format(date));
-    
-    herrSql.insertHerramientas(herr);
-    
-    
-   }catch(Exception ex){
-   }
+//si no es una modificacion hace un nuevo ingreso a la base de datos.
+        if (!itsModf) {
+            try {
+                int respuesta = 0;
 
-    
+                respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea guardar?", "Confirme",
+                        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (respuesta == JOptionPane.YES_OPTION) {
+
+                    herr.setNombre_herr(txtNombre.getText());
+                    herr.setDescripcion_herr(txtDescripcion.getText());
+                    herr.setMarca_herr(txtMarca.getText());
+                    herr.setEstado_herr(cmbEstado.getSelectedItem().toString());
+                    herr.setNombre_prov(this.cmbProv.getSelectedItem().toString());
+                    herr.setValor_herr(Integer.parseInt(this.txtValor.getText()));
+                    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+                    Date date = new Date();
+                    herr.setFecha_ing_herr(dateFormat.format(date));
+                    herr.setFecha_mod_herr(dateFormat.format(date));
+
+                    herrSql.insertHerramientas(herr);
+                }
+                JOptionPane.showMessageDialog(null, "Datos guardados exitosamente");
+
+            } catch (Exception ex) {
+            }
+        } else //si es una mdificacion hago un update a la base de datos
+        {
+            herr.setNombre_herr(txtNombre.getText());
+            herr.setDescripcion_herr(txtDescripcion.getText());
+            herr.setMarca_herr(txtMarca.getText());
+            herr.setEstado_herr(cmbEstado.getSelectedItem().toString());
+            herr.setNombre_prov(this.cmbProv.getSelectedItem().toString());
+            herr.setValor_herr(Integer.parseInt(this.txtValor.getText()));
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+            Date date = new Date();
+
+            herr.setFecha_mod_herr(dateFormat.format(date));
+            
+            herrSql.updateHerramientas(herr);
+
+        }
+
+
     }//GEN-LAST:event_btnGuardarHerrActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+    
+   
+        
+        
+        
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -336,7 +377,11 @@ public class frmHerrMan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmHerrMan().setVisible(true);
+                try {
+                    new frmHerrMan().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(frmHerrMan.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -368,18 +413,32 @@ public class frmHerrMan extends javax.swing.JFrame {
     public javax.swing.JTextField txtValor;
     // End of variables declaration//GEN-END:variables
 
-  public void LimpiarHerr() {
+    public void LimpiarHerr() {
 
-     txtDescripcion.setText("");
-     txtMarca.setText("");
-     txtNombre.setText("");
-     txtValor.setText("");
-     cmbEstado.setSelectedIndex(0);
-     cmbProv.setSelectedIndex(0);
+        txtDescripcion.setText("");
+        txtMarca.setText("");
+        txtNombre.setText("");
+        txtValor.setText("");
+        cmbEstado.setSelectedIndex(0);
+        cmbProv.setSelectedIndex(0);
     }
 
     private void loadWithInfo() {
-        
-        
+
     }
+
+    private void cargarProveedor() throws SQLException {
+        ArrayList a = provSQL.getProveedor();
+        cmbProv.removeAllItems();
+        for (int i = 0; i < a.size(); i++) {
+            cmbProv.addItem(a.get(i));
+            
+        }
+    }
+
+    private void cargarValores() {
+        this.txtDescripcion.setText(herr.getDescripcion_herr());
+    }
+    
+ 
 }

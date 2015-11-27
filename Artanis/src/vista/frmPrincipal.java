@@ -5,11 +5,15 @@
  */
 package vista;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author del_a
  */
-public class frmPrincipal extends javax.swing.JFrame {
+public class frmPrincipal extends javax.swing.JFrame  {
     
    // private TablaRenderizadorCliente renderizador = new TablaRenderizadorCliente();
     private int filaSeleccionada = -1;
@@ -17,22 +21,16 @@ public class frmPrincipal extends javax.swing.JFrame {
     frmPersonal personalMan = new frmPersonal();
     frmTransMan transMan = new frmTransMan();
     
-    
-    
-    
-    
-    
-    //*** Importar Variables ***
-      
-
+    public frmHerramientas h = null;
+   
     /**
      * Creates new form frmlogin
      */
     public frmPrincipal() {
         initComponents();
-       
-             
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -1907,8 +1905,22 @@ this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jmHerramientasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmHerramientasActionPerformed
-frmHerramientas h = new frmHerramientas();
-h.setVisible(true);
+
+        try {
+            if (h==null){
+                h = new frmHerramientas();
+                h.setVisible(true);
+                
+            }else{
+                h.toFront();
+                
+        }
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(frmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_jmHerramientasActionPerformed
 
     /**

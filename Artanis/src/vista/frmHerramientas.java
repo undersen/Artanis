@@ -7,7 +7,10 @@ package vista;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import modelo.HerramientasSQL;
+import Controladores.HerramientasSQL;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,14 +18,15 @@ import modelo.HerramientasSQL;
  */
 public class frmHerramientas extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frmHerramientas
-     */
-    
+    frmHerrMan f;
     HerramientasSQL herrSql= new HerramientasSQL();
-    public frmHerramientas() {
+    private int IDHerramienta;
+    
+    public frmHerramientas() throws SQLException {
+        this.f = new frmHerrMan();
         initComponents();
         tablaHerr.setModel(herrSql.getTablaHerr());
+        
     }
 
     /**
@@ -80,6 +84,11 @@ public class frmHerramientas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tablaHerr.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaHerrMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tablaHerr);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -98,8 +107,18 @@ public class frmHerramientas extends javax.swing.JFrame {
         });
 
         btnModificarHerr.setText("Modificar");
+        btnModificarHerr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarHerrActionPerformed(evt);
+            }
+        });
 
         btnEliminarHerr.setText("Eliminar");
+        btnEliminarHerr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarHerrActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Salir");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -162,13 +181,33 @@ public class frmHerramientas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-this.dispose();
+        this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btnIngresarHerrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarHerrActionPerformed
-frmHerrMan f = new frmHerrMan();
 f.setVisible(true);
     }//GEN-LAST:event_btnIngresarHerrActionPerformed
+
+    private void btnModificarHerrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarHerrActionPerformed
+frmHerrMan f = new frmHerrMan(IDHerramienta);
+        System.out.println(IDHerramienta);
+f.setVisible(true);
+    }//GEN-LAST:event_btnModificarHerrActionPerformed
+
+    private void tablaHerrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaHerrMouseClicked
+
+try {
+int row = tablaHerr.getSelectedRow();
+String  a =  (String) (tablaHerr.getValueAt(row, 0));
+    IDHerramienta= Integer.parseInt(a);
+}catch(Exception ex){
+    System.out.println(ex.getMessage());
+}
+    }//GEN-LAST:event_tablaHerrMouseClicked
+
+    private void btnEliminarHerrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarHerrActionPerformed
+herrSql.deleteHerramientas(IDHerramienta);
+    }//GEN-LAST:event_btnEliminarHerrActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,7 +239,11 @@ f.setVisible(true);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmHerramientas().setVisible(true);
+                try {
+                    new frmHerramientas().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(frmHerramientas.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
