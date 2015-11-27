@@ -8,6 +8,7 @@ package vista;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import modelo.HerramientasSQL;
 import ram.Herramientas;
 import ram.Provedorees;
 
@@ -20,6 +21,9 @@ public class frmHerrMan extends javax.swing.JFrame {
     /**
      * Creates new form frmHerr
      */
+    Herramientas herr = new Herramientas();
+    HerramientasSQL herrSql = new HerramientasSQL();
+    
     
     int id_combo_pro =  0;
 
@@ -35,6 +39,12 @@ public class frmHerrMan extends javax.swing.JFrame {
     public frmHerrMan() {
         initComponents();
     }
+    
+      public frmHerrMan(int i) {
+        initComponents();
+        loadWithInfo();
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -271,19 +281,26 @@ public class frmHerrMan extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbProvActionPerformed
 
     private void btnGuardarHerrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarHerrActionPerformed
-      /*  Herramientas h = new Herramientas();
-        h.setNombre_herr(txtNombre.getText());
-        h.setDescripcion_herr(txtDescripcion.getText());
-        h.setMarca_herr(txtMarca.getText());
-        h.setEstado_herr(cmbEstado.getSelectedItem().toString());
-        h.setNombre_prov(this.cmbProv.getSelectedItem().toString());
-        h.setValor_herr(Integer.parseInt(this.txtValor.getText()));*/
+   try{
+        
+     herr.setNombre_herr(txtNombre.getText());
+     herr.setDescripcion_herr(txtDescripcion.getText());
+     herr.setMarca_herr(txtMarca.getText());
+     herr.setEstado_herr(cmbEstado.getSelectedItem().toString());
+     herr.setNombre_prov(this.cmbProv.getSelectedItem().toString());
+     herr.setValor_herr(Integer.parseInt(this.txtValor.getText()));
     DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-Date date = new Date();
-//h.setFecha_ing_herr(dateFormat.format(date));
+    Date date = new Date();
+    herr.setFecha_ing_herr(dateFormat.format(date));
+    herr.setFecha_mod_herr(dateFormat.format(date));
+    
+    herrSql.insertHerramientas(herr);
+    
+    
+   }catch(Exception ex){
+   }
 
-
-System.out.println(dateFormat.format(date)); //2014/08/06 15:59:48
+    
     }//GEN-LAST:event_btnGuardarHerrActionPerformed
 
     /**
@@ -350,4 +367,19 @@ System.out.println(dateFormat.format(date)); //2014/08/06 15:59:48
     public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtValor;
     // End of variables declaration//GEN-END:variables
+
+  public void LimpiarHerr() {
+
+     txtDescripcion.setText("");
+     txtMarca.setText("");
+     txtNombre.setText("");
+     txtValor.setText("");
+     cmbEstado.setSelectedIndex(0);
+     cmbProv.setSelectedIndex(0);
+    }
+
+    private void loadWithInfo() {
+        
+        
+    }
 }

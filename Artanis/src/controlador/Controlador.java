@@ -137,7 +137,7 @@ public class Controlador implements ActionListener, MouseListener {
             this.frmprincipal.setTitle("Artanis");
             this.frmprincipal.setVisible(true);
 
-            LimpiarHerr();
+            
             this.frmherramientas.getContentPane().setBackground(new java.awt.Color(255, 255, 255));
             this.frmherramientas.setLocationRelativeTo(null);
             this.frmherramientas.setResizable(false);
@@ -191,7 +191,7 @@ public class Controlador implements ActionListener, MouseListener {
                 if (this.INT.IngresoHerramientas(nombre_err, descripcion_herr, id_prov, valor_herr, fecha_ing_herr, fecha_mod_herr)) {
                     JOptionPane.showMessageDialog(null, "Datos guardados exitosamente");
                     this.frmherrman.setVisible(false);
-                    this.LimpiarHerr();
+                    
                 } else {
                     this.frmherrman.lbmensaje.setVisible(true);
                     this.frmherrman.lbmensaje.setText("Error: Con la Base de Datos.");
@@ -217,17 +217,5 @@ public class Controlador implements ActionListener, MouseListener {
 
     }
 
-    public void LimpiarHerr() {
-
-        this.frmherramientas.tablaHerr.setModel(this.modelo.getTablaHerr());
-        this.frmherramientas.lbCantidadHerr.setText(Integer.toString(this.modelo.getRegistrosHerr()));
-        this.frmherrman.txtNombre.setText("");
-        this.frmherrman.txtDescripcion.setText("");
-        this.frmherrman.txtValor.setText("");
-        this.frmherrman.cmbProv.setModel(this.modelo.getProveedores());
-        this.frmherrman.lbmensaje.setText("");
-        this.frmherrman.lbmensaje.setVisible(false);
-        this.frmherrman.lbFecha.setText(fechaSistema.getFecha());
-
-    }
+  
 }

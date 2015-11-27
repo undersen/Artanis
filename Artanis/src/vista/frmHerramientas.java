@@ -5,6 +5,10 @@
  */
 package vista;
 
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import modelo.HerramientasSQL;
+
 /**
  *
  * @author del_a
@@ -14,8 +18,11 @@ public class frmHerramientas extends javax.swing.JFrame {
     /**
      * Creates new form frmHerramientas
      */
+    
+    HerramientasSQL herrSql= new HerramientasSQL();
     public frmHerramientas() {
         initComponents();
+        tablaHerr.setModel(herrSql.getTablaHerr());
     }
 
     /**
@@ -210,4 +217,6 @@ f.setVisible(true);
     public javax.swing.JTable tablaHerr;
     private javax.swing.JTextField txtBusHerr;
     // End of variables declaration//GEN-END:variables
+
+    
 }
