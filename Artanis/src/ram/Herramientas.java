@@ -13,7 +13,9 @@ public class Herramientas {
 
     private int id_herr;
     private String nombre_herr;
+    private String marca_herr;
     private String descripcion_herr;
+    private String estado_herr;
     private int valor_herr;
     private String fecha_ing_herr;
     private String fecha_mod_herr;
@@ -36,12 +38,28 @@ public class Herramientas {
         this.nombre_herr = nombre_herr;
     }
 
+    public String getMarca_herr() {
+        return marca_herr;
+    }
+
+    public void setMarca_herr(String marca_herr) {
+        this.marca_herr = marca_herr;
+    }
+
     public String getDescripcion_herr() {
         return descripcion_herr;
     }
 
     public void setDescripcion_herr(String descripcion_herr) {
         this.descripcion_herr = descripcion_herr;
+    }
+
+    public String getEstado_herr() {
+        return estado_herr;
+    }
+
+    public void setEstado_herr(String estado_herr) {
+        this.estado_herr = estado_herr;
     }
 
     public int getValor_herr() {

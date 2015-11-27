@@ -84,6 +84,11 @@ public class frmHerramientas extends javax.swing.JFrame {
         lbCantidadHerr.setText("N°");
 
         btnIngresarHerr.setText("Ingresar");
+        btnIngresarHerr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarHerrActionPerformed(evt);
+            }
+        });
 
         btnModificarHerr.setText("Modificar");
 
@@ -152,6 +157,11 @@ public class frmHerramientas extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void btnIngresarHerrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarHerrActionPerformed
+frmHerrMan f = new frmHerrMan();
+f.setVisible(true);
+    }//GEN-LAST:event_btnIngresarHerrActionPerformed
 
     /**
      * @param args the command line arguments

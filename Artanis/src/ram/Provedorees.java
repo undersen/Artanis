@@ -11,20 +11,20 @@ package ram;
  */
 public class Provedorees {
 
-    private String nombre_prov;
-    private int id_prov;
+    private String nombre_pro;
+    private int id_pro;
 
     public Provedorees(String nombre, int id) {
-        this.nombre_prov = nombre;
-        this.id_prov = id;
+        this.nombre_pro = nombre;
+        this.id_pro = id;
     }
 
     public int getID() {
-        return id_prov;
+        return id_pro;
     }
 
     public String toString() {
-        return nombre_prov;
+        return nombre_pro;
     }
 
 }

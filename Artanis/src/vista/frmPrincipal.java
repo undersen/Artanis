@@ -1306,7 +1306,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel57Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addComponent(jLabel284)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1847,6 +1847,11 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jmHerramientas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16herr.png"))); // NOI18N
         jmHerramientas.setText("Herramientas");
+        jmHerramientas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmHerramientasActionPerformed(evt);
+            }
+        });
         jMenu2.add(jmHerramientas);
 
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16mater.png"))); // NOI18N
@@ -1900,6 +1905,11 @@ transMan.setVisible(true);
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jmHerramientasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmHerramientasActionPerformed
+frmHerramientas h = new frmHerramientas();
+h.setVisible(true);
+    }//GEN-LAST:event_jmHerramientasActionPerformed
 
     /**
      * @param args the command line arguments
