@@ -43,7 +43,7 @@ public class HerramientasSQL extends ConexionSQL{
         }      
     }
     
-    public boolean updateHerramientas(Herramientas h ){
+    public boolean updateHerramientas(Herramientas h){
         
         try {
           String sql ="update herramientas set nombre_herr='"+h.getNombre_herr()+"', descripcion_herr='"+h.getDescripcion_herr()+"',valor_herr="+h.getValor_herr()
@@ -96,6 +96,49 @@ public class HerramientasSQL extends ConexionSQL{
         try {
             PreparedStatement pstm = this.getConexion().prepareStatement("SELECT h.id_herr , h.nombre_herr, h.descripcion_herr,h.valor_herr,h.fecha_ing_herr, h.fecha_mod_herr,p.id_prov,p.nombre_prov\n"
                     + "FROM herramientas as h  LEFT JOIN proveedor as p ON h.id_prov=p.id_prov where h.state_herr='enable'\n"
+                    + "GROUP BY h.id_herr , h.nombre_herr, h.descripcion_herr,h.valor_herr,h.fecha_ing_herr, h.fecha_mod_herr;");
+            System.out.println(pstm);
+            ResultSet res = pstm.executeQuery();
+
+            int i = 0;
+            while (res.next()) {
+                data[i][0] = res.getString("h.id_herr");
+                data[i][1] = res.getString("h.nombre_herr");
+                data[i][2] = res.getString("h.valor_herr");
+                data[i][3] = res.getString("h.fecha_mod_herr");
+                data[i][4] = res.getString("p.nombre_prov");
+                i++;
+            }
+            res.close();
+            
+            tableModel.setDataVector(data, columNames);
+            tableModel.isCellEditable(i, i);
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return this.tableModel;
+    }
+      
+      
+       public DefaultTableModel getTablaHerrByKey(String name) {
+
+        String[] columNames = {"ID", "Nombre", "Valor", "Fecha Modificacion", "Proveedor"};
+    int registrosHerr = 0;
+        try {
+            PreparedStatement pstm = this.getConexion().prepareStatement("SELECT count(*) as total FROM herramientas");
+            ResultSet res = pstm.executeQuery();
+            res.next();
+            registrosHerr = res.getInt("total");
+
+            res.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+
+        Object[][] data = new String[registrosHerr][5];
+        try {
+            PreparedStatement pstm = this.getConexion().prepareStatement("SELECT h.id_herr , h.nombre_herr, h.descripcion_herr,h.valor_herr,h.fecha_ing_herr, h.fecha_mod_herr,p.id_prov,p.nombre_prov\n"
+                    + "FROM herramientas as h  LEFT JOIN proveedor as p ON h.id_prov=p.id_prov where h.state_herr='enable' and name_herr\n"
                     + "GROUP BY h.id_herr , h.nombre_herr, h.descripcion_herr,h.valor_herr,h.fecha_ing_herr, h.fecha_mod_herr;");
             System.out.println(pstm);
             ResultSet res = pstm.executeQuery();

@@ -31,7 +31,7 @@
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="txtBusHerr" min="-2" pref="320" max="-2" attributes="0"/>
-                      <EmptySpace pref="259" max="32767" attributes="0"/>
+                      <EmptySpace pref="260" max="32767" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="lbCantidadHerr" min="-2" max="-2" attributes="0"/>
@@ -97,7 +97,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Buscar Personal:"/>
+        <Property name="text" type="java.lang.String" value="Buscar vehiculo:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtBusHerr">

@@ -394,7 +394,7 @@ public class frmPerMan extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 518, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -409,6 +409,11 @@ public class frmPerMan extends javax.swing.JFrame {
 
         btnGuardarHerr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16guardar.png"))); // NOI18N
         btnGuardarHerr.setText("Guardar");
+        btnGuardarHerr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarHerrActionPerformed(evt);
+            }
+        });
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/16Salir.png"))); // NOI18N
         btnSalir.setText("Salir");
@@ -462,6 +467,10 @@ public class frmPerMan extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGuardarHerrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarHerrActionPerformed
+       
+    }//GEN-LAST:event_btnGuardarHerrActionPerformed
 
     /**
      * @param args the command line arguments

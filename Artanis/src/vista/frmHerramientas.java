@@ -221,7 +221,7 @@ herrSql.deleteHerramientas(IDHerramienta);
     }//GEN-LAST:event_btnEliminarHerrActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
- tablaHerr.setModel(herrSql.getTablaHerr());
+cargarTabla();
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     /**
@@ -276,6 +276,10 @@ herrSql.deleteHerramientas(IDHerramienta);
     public javax.swing.JTable tablaHerr;
     private javax.swing.JTextField txtBusHerr;
     // End of variables declaration//GEN-END:variables
+
+    public void cargarTabla() {
+         tablaHerr.setModel(herrSql.getTablaHerr());
+    }
 
     
 }

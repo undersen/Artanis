@@ -101,6 +101,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtBusHerr">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtBusHerrKeyTyped"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
       <AuxValues>

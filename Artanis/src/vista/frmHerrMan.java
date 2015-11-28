@@ -11,14 +11,11 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import Controladores.HerramientasSQL;
 import Controladores.ProveedorSQL;
-import java.lang.reflect.Constructor;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import ram.Herramientas;
-import ram.Proveedor;
-import vista.frmPrincipal;
 
 /**
  *
@@ -334,6 +331,15 @@ public class frmHerrMan extends javax.swing.JFrame {
             herr.setFecha_mod_herr(dateFormat.format(date));
             
             herrSql.updateHerramientas(herr);
+            
+            frmHerramientas f;
+            try {
+                f = new frmHerramientas();
+                f.cargarTabla();
+            } catch (SQLException ex) {
+                Logger.getLogger(frmHerrMan.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
 
         }
 
@@ -437,12 +443,10 @@ public class frmHerrMan extends javax.swing.JFrame {
         cmbProv.removeAllItems();
         for (int i = 0; i < a.size(); i++) {
             cmbProv.addItem(a.get(i));
-            
         }
     }
 
     private void cargarValores() throws SQLException {
-        
         cmbProv.removeAllItems();
         this.txtDescripcion.setText(herr.getDescripcion_herr());
         this.txtMarca.setText(herr.getMarca_herr());
@@ -452,10 +456,5 @@ public class frmHerrMan extends javax.swing.JFrame {
         cargarProveedor();
         this.cmbProv.setSelectedItem(herr.getNombre_prov());
         this.lbUltimaMod.setText(lbUltimaMod.getText()+" "+herr.getFecha_mod_herr());
-        
-        
-        
     }
-    
- 
 }

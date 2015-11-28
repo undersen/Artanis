@@ -51,6 +51,12 @@ public class frmPersonal extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 153, 153));
         jLabel3.setText("Buscar Personal:");
 
+        txtBusHerr.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBusHerrKeyTyped(evt);
+            }
+        });
+
         tablaPersonal.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         tablaPersonal.setForeground(new java.awt.Color(0, 102, 255));
         tablaPersonal.setModel(new javax.swing.table.DefaultTableModel(
@@ -227,6 +233,11 @@ perMan.setVisible(true);
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
 
     }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void txtBusHerrKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusHerrKeyTyped
+this.txtBusHerr.getText();
+
+    }//GEN-LAST:event_txtBusHerrKeyTyped
 
     /**
      * @param args the command line arguments
