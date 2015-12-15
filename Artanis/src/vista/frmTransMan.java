@@ -7,7 +7,7 @@ package vista;
 
 import javax.swing.JOptionPane;
 import ram.Transporte;
-import Controladores.TransporteSQL;
+import Modelo.TransporteSQL;
 
 /**
  *

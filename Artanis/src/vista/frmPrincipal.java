@@ -1896,8 +1896,7 @@ transMan.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        personalMan.setLocationRelativeTo(null);        
-        personalMan.setVisible(true);
+
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -1906,21 +1905,7 @@ this.dispose();
 
     private void jmHerramientasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmHerramientasActionPerformed
 
-        try {
-            if (h==null){
-                h = new frmHerramientas();
-                h.setVisible(true);
-                
-            }else{
-                h.toFront();
-                
-        }
-            
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(frmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+ 
     }//GEN-LAST:event_jmHerramientasActionPerformed
 
     /**

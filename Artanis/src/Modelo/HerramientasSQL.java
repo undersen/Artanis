@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controladores;
+package Modelo;
 
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import ram.Herramientas;
 
@@ -167,17 +166,15 @@ public class HerramientasSQL extends ConexionSQL{
       
       
        public Herramientas getHerrById(int id) {
-Herramientas herr= new Herramientas();
+            Herramientas herr= new Herramientas();
        
         try {
             PreparedStatement pstm = this.getConexion().prepareStatement("SELECT h.id_herr , h.nombre_herr, marca_herr ,h.descripcion_herr,h.valor_herr,h.fecha_ing_herr, h.fecha_mod_herr,p.id_prov,p.nombre_prov, h.estado_herr ,h.state_herr \n"
                     + "FROM herramientas as h  LEFT JOIN proveedor as p ON h.id_prov=p.id_prov where h.state_herr='enable' and h.id_herr="+id+"\n"
                     + "GROUP BY h.id_herr , h.nombre_herr, h.descripcion_herr,h.valor_herr,h.fecha_ing_herr, h.fecha_mod_herr;");
-
             
             System.out.println(pstm);
             ResultSet res = pstm.executeQuery();
-
           
             while(res.next()){
                 herr.setId_herr(res.getInt("h.id_herr"));
@@ -189,7 +186,6 @@ Herramientas herr= new Herramientas();
                 herr.setValor_herr(res.getInt("valor_herr"));
                 herr.setFecha_mod_herr(res.getDate("fecha_mod_herr").toString());
             }
-            
             res.close();
             
             
@@ -201,8 +197,28 @@ Herramientas herr= new Herramientas();
 
        
        
+       public void  VerificarTabla() throws SQLException 
+       { 
+           boolean a =false;
+           String sql ="select * from herramientas";
+       PreparedStatement pstm = (PreparedStatement) this.getConexion();
+           System.out.println(sql);
+         try (ResultSet res = pstm.executeQuery(sql)) {
+             while (res.next()) {
+                 
+                 String asd;
+                 asd = res.getString("nombre_herr");
+                 a=true;
+                 System.out.println(asd);
+             }
+         }
+            
+          
+    
+    }
+       }
+         
        
-    
 
-    
-}
+
+

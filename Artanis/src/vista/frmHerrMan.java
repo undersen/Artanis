@@ -9,8 +9,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
-import Controladores.HerramientasSQL;
-import Controladores.ProveedorSQL;
+import Modelo.HerramientasSQL;
+import Modelo.ProveedorSQL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -36,24 +36,11 @@ public class frmHerrMan extends javax.swing.JFrame {
 
   
 
-    public frmHerrMan() throws SQLException {
-        initComponents();
-        cargarProveedor();
+    public frmHerrMan()  {
+        initComponents();   
     }
 
-    public frmHerrMan(int i) {
-        initComponents();
-        //loadWithInfo();
-        herr = herrSql.getHerrById(i);
-        // seteo la variable y le digo que si es una modificacion
-        itsModf = true;
-        try {
-            cargarValores();
-        } catch (SQLException ex) {
-            Logger.getLogger(frmHerrMan.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }
+ 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -291,7 +278,7 @@ public class frmHerrMan extends javax.swing.JFrame {
 
     private void btnGuardarHerrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarHerrActionPerformed
 //si no es una modificacion hace un nuevo ingreso a la base de datos.
-        if (!itsModf) {
+/*        if (!itsModf) {
             try {
                 int respuesta = 0;
 
@@ -333,25 +320,17 @@ public class frmHerrMan extends javax.swing.JFrame {
             herrSql.updateHerramientas(herr);
             
             frmHerramientas f;
-            try {
-                f = new frmHerramientas();
-                f.cargarTabla();
-            } catch (SQLException ex) {
-                Logger.getLogger(frmHerrMan.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            f = new frmHerramientas();
+            f.cargarTabla();
             
 
         }
-
+*/
 
     }//GEN-LAST:event_btnGuardarHerrActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
     
-   
-        
-        
-        
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_btnSalirActionPerformed
 
@@ -388,11 +367,7 @@ public class frmHerrMan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new frmHerrMan().setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(frmHerrMan.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                new frmHerrMan().setVisible(true);
             }
         });
     }
@@ -434,19 +409,20 @@ public class frmHerrMan extends javax.swing.JFrame {
         cmbProv.setSelectedIndex(0);
     }
 
-    private void loadWithInfo() {
+    
 
-    }
-
-    private void cargarProveedor() throws SQLException {
+    private void cargarProveedor() {
         ArrayList a = provSQL.getProveedor();
         cmbProv.removeAllItems();
+        System.out.println(a);
         for (int i = 0; i < a.size(); i++) {
             cmbProv.addItem(a.get(i));
         }
     }
 
-    private void cargarValores() throws SQLException {
+    public void cargarValores(Herramientas herr)  {
+        
+        
         cmbProv.removeAllItems();
         this.txtDescripcion.setText(herr.getDescripcion_herr());
         this.txtMarca.setText(herr.getMarca_herr());

@@ -12,11 +12,13 @@ import vista.frmPrincipal;
 public class Main {
 
  
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+    Controlador c = new Controlador();
+    c.iniciar();
       
-      frmPrincipal p = new frmPrincipal();
-      p.setExtendedState(JFrame.MAXIMIZED_BOTH);
-      p.setVisible(true);
+      
+     
+      
         
     }
     

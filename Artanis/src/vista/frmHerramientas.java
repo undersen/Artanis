@@ -5,27 +5,16 @@
  */
 package vista;
 
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import Controladores.HerramientasSQL;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author del_a
  */
 public class frmHerramientas extends javax.swing.JFrame {
 
-    frmHerrMan f;
-    HerramientasSQL herrSql= new HerramientasSQL();
-    private int IDHerramienta;
-    
-    public frmHerramientas() throws SQLException {
-        this.f = new frmHerrMan();
+    public int IDHerramienta;
+ 
+    public frmHerramientas()  {
         initComponents();
-        tablaHerr.setModel(herrSql.getTablaHerr());
         
     }
 
@@ -196,13 +185,13 @@ public class frmHerramientas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btnIngresarHerrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarHerrActionPerformed
-f.setVisible(true);
+
     }//GEN-LAST:event_btnIngresarHerrActionPerformed
 
     private void btnModificarHerrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarHerrActionPerformed
-frmHerrMan f = new frmHerrMan(IDHerramienta);
+/*frmHerrMan f = new frmHerrMan(IDHerramienta);
         System.out.println(IDHerramienta);
-f.setVisible(true);
+f.setVisible(true);*/
     }//GEN-LAST:event_btnModificarHerrActionPerformed
 
     private void tablaHerrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaHerrMouseClicked
@@ -217,11 +206,11 @@ String  a =  (String) (tablaHerr.getValueAt(row, 0));
     }//GEN-LAST:event_tablaHerrMouseClicked
 
     private void btnEliminarHerrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarHerrActionPerformed
-herrSql.deleteHerramientas(IDHerramienta);
+//herrSql.deleteHerramientas(IDHerramienta);
     }//GEN-LAST:event_btnEliminarHerrActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-cargarTabla();
+
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     /**
@@ -254,11 +243,7 @@ cargarTabla();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new frmHerramientas().setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(frmHerramientas.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                new frmHerramientas().setVisible(true);
             }
         });
     }
@@ -277,9 +262,7 @@ cargarTabla();
     private javax.swing.JTextField txtBusHerr;
     // End of variables declaration//GEN-END:variables
 
-    public void cargarTabla() {
-         tablaHerr.setModel(herrSql.getTablaHerr());
-    }
+   
 
     
 }

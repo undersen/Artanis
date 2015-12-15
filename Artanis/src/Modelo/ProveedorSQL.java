@@ -3,13 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controladores;
+package Modelo;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import ram.Proveedor;
 
 /**
  *
@@ -17,23 +15,24 @@ import ram.Proveedor;
  */
 public class ProveedorSQL extends ConexionSQL{
     
-    public ArrayList getProveedor() throws SQLException {
+    public ArrayList getProveedor()  {
      
+       
+        
      ArrayList<String> prov = new ArrayList<>();
      try {
             PreparedStatement pstm = this.getConexion().prepareStatement("select * from proveedor");
 
-            ResultSet res = pstm.executeQuery();
-
-            int i = 0;
-            while (res.next()) {
-               prov.add(res.getString("nombre_prov"));
-               
-            }
-            res.close();
-            
+         try (ResultSet res = pstm.executeQuery()) {
+             
+             int i = 0;
+             while (res.next()) {
+                 prov.add(res.getString("nombre_prov"));
+             }
+         }  
             return prov;
-    }catch(Exception ex){System.out.println(ex.getMessage());
+    }catch(Exception ex){
+        System.out.println(ex.getMessage());
         
          return prov;
     }
